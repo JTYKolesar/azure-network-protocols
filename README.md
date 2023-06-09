@@ -22,8 +22,8 @@ This tutorial observes the various network traffic to and from Azure Virtual Mac
 
 - Setup 2 Virtual Machines within Azure:
   - Virtual Machine #1 (Windows 10)
-  - Virtual Machine #2 (Ubuntu) -- using same Resource Group and Vnet as VM1
-- Step 2
+  - Virtual Machine #2 (Linux Ubuntu) -- using same Resource Group and Vnet as VM1
+- Use Remote Desktop (RDP) to VM1 and install Wireshark.
 - Step 3
 - Step 4
 
