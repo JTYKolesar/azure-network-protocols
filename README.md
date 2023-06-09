@@ -70,13 +70,35 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
+<h3>Connecting to VM1 and Installing Wireshark</h3>
+
+- From Azure Portal, go to VM1's Overview page and copy the Public IP address.
+- Press the Windows Key/Button, then type in "Remote Desktop Connection" (RDP).
+- Input the IP into RDP and click "Connect".
+- Enter the login credentials for VM1, then click "OK" (this example uses **winuser**).
+- When the Certificate Error prompt appears, just click "Yes".
+- As it boots up, you can disable all privacy settings when prompted, then hit "Accept".
 <p>
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+- On VM1, open Microsoft Edge (or any internet browser), then go to the Wireshark download page.
+  - You can simply Google Search it, or copy the link shown.
+- Click on "Windows Intel Installer" to start downloading the executable.
+- Once downloaded, click "Open file" to run the .exe file (you can also find this inside your Downloads folder within Windows Explorer)
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
 
-<br />
+- The installation prompt will appear, hit "Next".
+- When the installation prompt appears, leave everything by default and keep pressing "Next" until you start Installing.
+- If any agreement prompts appear during installation, just agree to them and click install (without checkmarking anything).
+- After all installations are complete, click "Finish".
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+<h3></h3>
 
 <p>
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
