@@ -100,16 +100,28 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 
 <h3>Observe ICMP Traffic using Wireshark</h3>
 
-_Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol ICMPv4._
-- Minimize the virtual machine to the Azure Portal.
-- Go to VM2's Overview page and copy the PRIVATE IP address (this example uses **10.0.0.5**).
-- Return to VM2, press the Windows Key/Button and seach for "CMD" or "PowerShell".
-- Type in `ping -t <Private IP address>` (this example would use command **ping 10.0.0.5**).
-  - On Wireshark, you should be able to see the results of the sent and received packets.
+- While in the virtual machine, run Wireshark.
+- Click the first button at the top (looks like a shark fin) to start capturing activity on the VM.
+  - You can see there is activity constantly going in the background of the VM, despite you not doing anything.
+- Click in the search box above, type in "ICMP", then press ENTER to confirm.
+  - You should then see all boxes blank (this is due to having no activity under the ICMP protocol)
 <p>
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+_Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol ICMPv4._
+- Minimize the virtual machine to the Azure Portal.
+- Go to VM2's Overview page and copy the PRIVATE IP address (this example uses **10.0.0.5**).
+- Return to VM2, press the Windows Key/Button and seach for "CMD" or "PowerShell".
+- Type in `ping -t <Private IP address>` (this example would use command **ping -t 10.0.0.5**).
+  - On Wireshark, you should be able to see the results of packets being perpetually sent and received.
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+_While that is infinitely pinging, we'll try to close the port and observe what happens next:_
+- Minimize the virtual machine to the Azure Portal.
+- In the Search Box at the top header, type and select "Network Security Groups".
+- 
 
 <br />
