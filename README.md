@@ -3,7 +3,7 @@
 </p>
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-This tutorial observes the various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+This tutorial goes over how to observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -74,7 +74,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 
 - From Azure Portal, go to VM1's Overview page and copy the Public IP address.
 - Press the Windows Key/Button, then type in "Remote Desktop Connection" (RDP).
-- Input the IP into RDP and click "Connect".
+- Input the IP into RDP and click "Connect" (this example uses **20.171.65.41**).
 - Enter the login credentials for VM1, then click "OK" (this example uses **winuser**).
 - When the Certificate Error prompt appears, just click "Yes".
 - As it boots up, you can disable all privacy settings when prompted, then hit "Accept".
@@ -98,8 +98,14 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
-<h3></h3>
+<h3>Observe ICMP Traffic using Wireshark</h3>
 
+_Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol ICMPv4._
+- Minimize the virtual machine to the Azure Portal.
+- Go to VM2's Overview page and copy the PRIVATE IP address (this example uses **10.0.0.5**).
+- Return to VM2, press the Windows Key/Button and seach for "CMD" or "PowerShell".
+- Type in `ping -t <Private IP address>` (this example would use command **ping 10.0.0.5**).
+  - On Wireshark, you should be able to see the results of the sent and received packets.
 <p>
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
