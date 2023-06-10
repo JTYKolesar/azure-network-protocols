@@ -135,7 +135,8 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
   - _A lower number means it performs the task before any higher number after it._
 - You can change the Name if you desire, but not needed (this example uses **DENY_ICMP_PING_FROM_ANYWHERE**).
 - Click "Add".
-- Wait for a bit to take effect, but return to VM1 and observe the requests become timed out.
+- Wait for a bit to take effect, but return to VM1 and observe the requests time out.
+- Once done, you can press Control+C to stop the pinging in PowerShell.
 <p>
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
@@ -143,9 +144,30 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
-- 
-- 
-- 
-- 
+<h3>Observe SSH Traffic using Wireshark</h3>
 
-<br />
+- From Wireshark, type "SSH" in the search bar and press ENTER (there should be no activity).
+- From PowerShell, type `ssh <VM2 username@Private IP address>` (this example would use **ssh linuser@10.0.0.5**).
+- When it asks if you want to continue connecting, just type "yes", then ENTER.
+- It will then ask you for the password for VM2.
+  - When typing the password, there will be no visual indicator of you typing, but inputs are being read.
+- Once you think you typed your password correctly, press ENTER.
+  - You should then see the VM2's username, but colored Green.
+    - Because VM2 uses Ubuntu, commands must now be in Linux format.
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+- Now accessed to VM2, from PowerShell, type "id", then ENTER.
+  - This will give you the indentity group information for VM2's user.
+- Observe the new traffic on Wireshark.
+- When finished testing other Linux command tools, type in "exit" to close the linked connection and return to VM1's control.
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+
+
