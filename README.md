@@ -58,7 +58,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - Keep the size the same as the Windows VM (this example uses **Standard_E2s_v3 - 2 vcpus, 16 GiB memory**).
 - Change the Authentication type to "Password", and create any username (this example uses the username **linuser**).
 - Once done, press "Next:" until you reach "Networking" (or simply click the Networking tab".
-<p>
+<p align="center">
 <img src="https://i.imgur.com/X6DMGwE.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -66,7 +66,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - Set the Public IP to whatever it has automatically assigned to (you might have to confirm the selection).
 - Then press "Review + create".
 - If Validation passed, click "Create".
-<p>
+<p align="center">
 <img src="https://i.imgur.com/snw2Byu.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -78,10 +78,8 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - Enter the login credentials for VM1, then click "OK" (this example uses **winuser**).
 - When the Certificate Error prompt appears, just click "Yes".
 - As it boots up, you can disable all privacy settings when prompted, then hit "Accept".
-<p>
+<p align="center">
 <img src="https://i.imgur.com/4JNReKH.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/GyC1qlp.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -89,7 +87,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
   - You can simply Google Search it, or copy the link shown.
 - Click on "Windows Intel Installer" to start downloading the executable.
 - Once downloaded, click "Open file" to run the .exe file (you can also find this inside your Downloads folder within Windows Explorer)
-<p>
+<p align="center">
 <img src="https://i.imgur.com/chUmI2q.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -97,7 +95,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - When the installation prompt appears, leave everything by default and keep pressing "Next" until you start Installing.
 - If any agreement prompts appear during installation, just agree to them and click install (without checkmarking anything).
 - After all installations are complete, click "Finish".
-<p>
+<p align="center">
 <img src="https://i.imgur.com/kZJSHgb.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -106,19 +104,15 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - While in the virtual machine, run Wireshark.
 - Click the first button at the top (blue shark fin) to start capturing activity on the VM.
   - You can see there is activity constantly going in the background of the VM, despite you not doing anything.
-<p>
+<p align="center">
 <img src="https://i.imgur.com/vVm7yX4.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/ypuqGby.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/vo6Iafl.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 - Click in the search box above, type in "ICMP", then press ENTER to confirm.
   - You should then see all boxes blank (this is due to having no activity under the ICMP protocol)
-<p>
+<p align="center">
 <img src="https://i.imgur.com/a4jfqVg.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -128,13 +122,9 @@ _Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol IC
 - Return to VM2, press the Windows Key/Button and seach for "CMD" or "PowerShell".
 - Type in `ping -t <Private IP address>` (this example would use command **ping -t 10.0.0.5**).
   - On Wireshark, you should be able to see the results of packets being perpetually sent and received.
-<p>
+<p align="center">
 <img src="https://i.imgur.com/a4jfqVg.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/QlLMACP.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/XnGJJ8b.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -144,7 +134,7 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 - Click on "VM2-nsg".
 - Go to "Inbound security rules".
 - Click "Add"
-<p>
+<p align="center">
 <img src="https://i.imgur.com/wrZKCE1.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -155,33 +145,26 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 - You can change the Name if you desire, but not needed (this example uses **DENY_ICMP_PING_FROM_ANYWHERE**).
 - Click "Add".
 - Wait for a bit to take effect, but return to VM1 and observe the requests time out.
-<p>
+<p align="center">
 <img src="https://i.imgur.com/NC8PHxH.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/Q9nha7H.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/bCN1O9d.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 _Now that we've observed the denial of packets, let's try allow it again, however, instead of deleting the added rule, we can simply edit the Action to "Allow". _
-<p>
+<p align="center">
 <img src="https://i.imgur.com/Mzxx3Pk.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/oIGcjGU.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/wOJxDon.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
+
 - Once done, you can press Control+C to stop the pinging in PowerShell.
 
 <h3>Observe SSH Traffic using Wireshark</h3>
 
 - From Wireshark, type "SSH" in the search bar and press ENTER (there should be no activity).
   - A more direct way is typing "tcp.port == 22".
-<p>
+<p align="center">
 <img src="https://i.imgur.com/TBnNka8.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 - From PowerShell, type `ssh <VM2 username@Private IP address>` (this example would use **ssh linuser@10.0.0.5**).
@@ -191,10 +174,8 @@ _Now that we've observed the denial of packets, let's try allow it again, howeve
 - Once you think you typed your password correctly, press ENTER.
   - You should then see the VM2's username, but colored Green.
     - Because VM2 uses Ubuntu, commands must now be in Linux format.
-<p>
+<p align="center">
 <img src="https://i.imgur.com/QZbMzg2.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/STDQ3b0.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -202,7 +183,7 @@ _Now that we've observed the denial of packets, let's try allow it again, howeve
   - This will give you the indentity group information for VM2's user.
 - Observe the new traffic on Wireshark.
 - Type in "exit" to close the linked connection and return to VM1's control.
-<p>
+<p align="center">
 <img src="https://i.imgur.com/GGXC4Ry.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -212,7 +193,7 @@ _Now that we've observed the denial of packets, let's try allow it again, howeve
 - From PowerShell, type `ipconfig /renew`, then ENTER.
   - The virtual machine will briefly lose connection, but will return shortly.
 - Observe the new activity in Wireshark.
-<p>
+<p align="center">
 <img src="https://i.imgur.com/s3OoQOI.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -221,13 +202,9 @@ _Next to observe DNS traffic activity:_
   - A more direct way is typing "udp.port == 53".
 - Clear the boxes by pressing the "Restart current capture" button (green shark fin).
 - From PowerShell, type `nslookup www.google.com`, observe the new activity in Wireshark.
-<p>
+<p align="center">
 <img src="https://i.imgur.com/sKPc1ap.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/xvQtTBC.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 <img src="https://i.imgur.com/bDKkcYl.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -235,7 +212,7 @@ _Finally to observe DNS traffic activity:_
 - From Wireshark, search for "rdp", then ENTER (there should be a lot of traffic, non-stop).
   - A more direct way is typing "tcp.port == 3389".
 _Because we are currently using RDP to run the virtual machine, anything and everything done while in the VM is captured into Wireshark._
-<p>
+<p align="center">
 <img src="https://i.imgur.com/fvClqHS.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -244,12 +221,13 @@ _Because we are currently using RDP to run the virtual machine, anything and eve
 - From PowerShell, type `ipconfig /displaydns`, the ENTER.
   - _You should see many domain names to other websites with information below them._
   - _The saved data here allows your system to remember information a website that was already visited without and have access to it without making requesting for new info._
-<p>
+<p align="center">
 <img src="https://i.imgur.com/dLrnksv.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 - Type `ipconfig /flushdns`, then ENTER.
   - _This will essentially delete all entries within the cache, making your system require to make requests from the site for information as if were visiting the first time, which is then saved in the cache._
+- Type `ipconfig /displaydns` to see how everything has been cleared out and nothing to display.
 <p>
 <img src="https://i.imgur.com/bfOrHLb.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
