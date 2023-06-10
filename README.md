@@ -197,6 +197,21 @@ _Because we are currently using RDP to run the virtual machine, anything and eve
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
+<h3>BONUS: Display and Flush DNS</h3>
+
+- From PowerShell, type `ipconfig /displaydns`, the ENTER.
+  - _You should see many domain names to other websites with information below them._
+  - _The saved data here allows your system to remember information a website that was already visited without and have access to it without making requesting for new info.
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+- Type `ipconfig /flushdns`, then ENTER.
+  - _This will essentially delete all entries within the cache, making your system require to make requests from the site for information, which is then saved in the system cache.
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
 <h1>TUTORIAL END.<br /></h1>
 
 <h3>DON'T FORGET TO DELETE **EVERYTHING!** IN AZURE TO SAVE CREDITS!</h3>
