@@ -236,3 +236,5 @@ _Because we are currently using RDP to run the virtual machine, anything and eve
 <h1>TUTORIAL END.<br /></h1>
 
 <h3>DON'T FORGET TO DELETE **EVERYTHING!** IN AZURE TO SAVE CREDITS!</h3>
+
+_If you don't know how to, click <a href="https://github.com/JTYKolesar/azure-start/blob/main/README.md#bonus-delete-all-resources-in-azure">HERE</a>_
