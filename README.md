@@ -24,8 +24,9 @@ This tutorial goes over how to observe various network traffic to and from Azure
   - Virtual Machine #1 (Windows 10)
   - Virtual Machine #2 (Linux Ubuntu) -- using same Resource Group and Vnet as VM1
 - Use Remote Desktop (RDP) to VM1 and install Wireshark.
-- Step 3
-- Step 4
+- Use Wireshark and PowerShell to Observe Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+  - Add new Inbound Rules to Deny/Allow ICMP protocol.
+- Bonus: How to Display and Flush DNS.
 
 <h2>Actions and Observations</h2>
 
