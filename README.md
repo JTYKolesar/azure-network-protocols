@@ -48,7 +48,7 @@ This tutorial goes over how to observe various network traffic to and from Azure
   - IF there is a Licensing Checkbox at the end, make sure that is CHECKED!
 - If Validation passed, click "Create".
 <p align="center">
-<img src="" height="100%" width="100%" alt="Step 1-2"/>
+<img src="https://i.imgur.com/JnsNUpw.jpg" height="100%" width="100%" alt="Step 1-2"/>
 </p>
 
 _Essentially repeat the same steps from creating the other virtual machine, but using Ubuntu (linux):_
@@ -59,7 +59,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - Change the Authentication type to "Password", and create any username (this example uses the username **linuser**).
 - Once done, press "Next:" until you reach "Networking" (or simply click the Networking tab".
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/X6DMGwE.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
 - Make sure that the Virtual Network is set as the same as Windows VM (this example uses **VM1-vnet**).
@@ -67,7 +67,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - Then press "Review + create".
 - If Validation passed, click "Create".
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/snw2Byu.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 <h3>Connecting to VM1 and Installing Wireshark</h3>
@@ -79,7 +79,10 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - When the Certificate Error prompt appears, just click "Yes".
 - As it boots up, you can disable all privacy settings when prompted, then hit "Accept".
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/4JNReKH.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/GyC1qlp.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 - On VM1, open Microsoft Edge (or any internet browser), then go to the Wireshark download page.
@@ -87,7 +90,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - Click on "Windows Intel Installer" to start downloading the executable.
 - Once downloaded, click "Open file" to run the .exe file (you can also find this inside your Downloads folder within Windows Explorer)
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/chUmI2q.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 - The installation prompt will appear, hit "Next".
@@ -95,7 +98,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - If any agreement prompts appear during installation, just agree to them and click install (without checkmarking anything).
 - After all installations are complete, click "Finish".
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/kZJSHgb.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 <h3>Observe ICMP Traffic using Wireshark</h3>
@@ -103,10 +106,20 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - While in the virtual machine, run Wireshark.
 - Click the first button at the top (blue shark fin) to start capturing activity on the VM.
   - You can see there is activity constantly going in the background of the VM, despite you not doing anything.
+<p>
+<img src="https://i.imgur.com/vVm7yX4.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/ypuqGby.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/vo6Iafl.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
 - Click in the search box above, type in "ICMP", then press ENTER to confirm.
   - You should then see all boxes blank (this is due to having no activity under the ICMP protocol)
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/a4jfqVg.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 _Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol ICMPv4._
@@ -116,7 +129,13 @@ _Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol IC
 - Type in `ping -t <Private IP address>` (this example would use command **ping -t 10.0.0.5**).
   - On Wireshark, you should be able to see the results of packets being perpetually sent and received.
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/a4jfqVg.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/QlLMACP.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/XnGJJ8b.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 _While that is infinitely pinging, we'll try to deny those packets and observe what happens next:_
@@ -126,7 +145,7 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 - Go to "Inbound security rules".
 - Click "Add"
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/wrZKCE1.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 - Change the protocol to "ICMP".
@@ -136,18 +155,35 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 - You can change the Name if you desire, but not needed (this example uses **DENY_ICMP_PING_FROM_ANYWHERE**).
 - Click "Add".
 - Wait for a bit to take effect, but return to VM1 and observe the requests time out.
+<p>
+<img src="https://i.imgur.com/NC8PHxH.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/Q9nha7H.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/bCN1O9d.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+_Now that we've observed the denial of packets, let's try allow it again, however, instead of deleting the added rule, we can simply edit the Action to "Allow". _
+<p>
+<img src="https://i.imgur.com/Mzxx3Pk.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/oIGcjGU.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/wOJxDon.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
 - Once done, you can press Control+C to stop the pinging in PowerShell.
-<p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
 
 <h3>Observe SSH Traffic using Wireshark</h3>
 
 - From Wireshark, type "SSH" in the search bar and press ENTER (there should be no activity).
   - A more direct way is typing "tcp.port == 22".
+<p>
+<img src="https://i.imgur.com/TBnNka8.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
 - From PowerShell, type `ssh <VM2 username@Private IP address>` (this example would use **ssh linuser@10.0.0.5**).
 - When it asks if you want to continue connecting, just type "yes", then ENTER.
 - It will then ask you for the password for VM2.
@@ -156,18 +192,18 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
   - You should then see the VM2's username, but colored Green.
     - Because VM2 uses Ubuntu, commands must now be in Linux format.
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/QZbMzg2.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/STDQ3b0.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 - Now accessed to VM2, from PowerShell, type "id", then ENTER.
   - This will give you the indentity group information for VM2's user.
 - Observe the new traffic on Wireshark.
-- When finished testing other Linux command tools, type in "exit" to close the linked connection and return to VM1's control.
+- Type in "exit" to close the linked connection and return to VM1's control.
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/GGXC4Ry.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 <h3>Observe DHCP, DNS, and RDP Traffic using Wireshark</h3>
@@ -177,7 +213,7 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
   - The virtual machine will briefly lose connection, but will return shortly.
 - Observe the new activity in Wireshark.
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/s3OoQOI.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 _Next to observe DNS traffic activity:_
@@ -186,7 +222,13 @@ _Next to observe DNS traffic activity:_
 - Clear the boxes by pressing the "Restart current capture" button (green shark fin).
 - From PowerShell, type `nslookup www.google.com`, observe the new activity in Wireshark.
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/sKPc1ap.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/xvQtTBC.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/bDKkcYl.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 _Finally to observe DNS traffic activity:_
@@ -194,22 +236,22 @@ _Finally to observe DNS traffic activity:_
   - A more direct way is typing "tcp.port == 3389".
 _Because we are currently using RDP to run the virtual machine, anything and everything done while in the VM is captured into Wireshark._
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/fvClqHS.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 <h3>BONUS: Display and Flush DNS</h3>
 
 - From PowerShell, type `ipconfig /displaydns`, the ENTER.
   - _You should see many domain names to other websites with information below them._
-  - _The saved data here allows your system to remember information a website that was already visited without and have access to it without making requesting for new info.
+  - _The saved data here allows your system to remember information a website that was already visited without and have access to it without making requesting for new info._
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/dLrnksv.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 - Type `ipconfig /flushdns`, then ENTER.
-  - _This will essentially delete all entries within the cache, making your system require to make requests from the site for information, which is then saved in the system cache.
+  - _This will essentially delete all entries within the cache, making your system require to make requests from the site for information as if were visiting the first time, which is then saved in the cache._
 <p>
-<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/bfOrHLb.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
 <h1>TUTORIAL END.<br /></h1>
