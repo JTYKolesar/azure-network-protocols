@@ -101,7 +101,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 <h3>Observe ICMP Traffic using Wireshark</h3>
 
 - While in the virtual machine, run Wireshark.
-- Click the first button at the top (looks like a shark fin) to start capturing activity on the VM.
+- Click the first button at the top (blue shark fin) to start capturing activity on the VM.
   - You can see there is activity constantly going in the background of the VM, despite you not doing anything.
 - Click in the search box above, type in "ICMP", then press ENTER to confirm.
   - You should then see all boxes blank (this is due to having no activity under the ICMP protocol)
@@ -147,6 +147,7 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 <h3>Observe SSH Traffic using Wireshark</h3>
 
 - From Wireshark, type "SSH" in the search bar and press ENTER (there should be no activity).
+  - A more direct way is typing "tcp.port == 22".
 - From PowerShell, type `ssh <VM2 username@Private IP address>` (this example would use **ssh linuser@10.0.0.5**).
 - When it asks if you want to continue connecting, just type "yes", then ENTER.
 - It will then ask you for the password for VM2.
@@ -169,5 +170,33 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
+<h3>Observe DHCP, DNS, and RDP Traffic using Wireshark</h3>
 
+- From Wireshark, search for "dhcp", then ENTER (there should be no activity).
+- From PowerShell, type `ipconfig /renew`, then ENTER.
+  - The virtual machine will briefly lose connection, but will return shortly.
+- Observe the new activity in Wireshark.
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
 
+_Next to observe DNS traffic activity:_
+- From Wireshark, search for "dns", then ENTER (there should be a lot of traffic).
+  - A more direct way is typing "udp.port == 53".
+- Clear the boxes by pressing the "Restart current capture" button (green shark fin).
+- From PowerShell, type `nslookup www.google.com`, observe the new activity in Wireshark.
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+_Finally to observe DNS traffic activity:_
+- From Wireshark, search for "rdp", then ENTER (there should be a lot of traffic, non-stop).
+  - A more direct way is typing "tcp.port == 3389".
+_Because we are currently using RDP to run the virtual machine, anything and everything done while in the VM is captured into Wireshark._
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+<h1>TUTORIAL END.<br /></h1>
+
+<h3>DON'T FORGET TO DELETE **EVERYTHING!** IN AZURE TO SAVE CREDITS!</h3>
