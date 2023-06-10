@@ -119,9 +119,33 @@ _Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol IC
 <img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
-_While that is infinitely pinging, we'll try to close the port and observe what happens next:_
+_While that is infinitely pinging, we'll try to deny those packets and observe what happens next:_
 - Minimize the virtual machine to the Azure Portal.
 - In the Search Box at the top header, type and select "Network Security Groups".
+- Click on "VM2-nsg".
+- Go to "Inbound security rules".
+- Click "Add"
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+- Change the protocol to "ICMP".
+- Change the Action to "Deny" (_we are trying to stop any packet requests from VM1_).
+- Change the Priorty to a lower number than the lowest one already set (this example uses **200**).
+  - _A lower number means it performs the task before any higher number after it._
+- You can change the Name if you desire, but not needed (this example uses **DENY_ICMP_PING_FROM_ANYWHERE**).
+- Click "Add".
+- Wait for a bit to take effect, but return to VM1 and observe the requests become timed out.
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+
+- 
+- 
+- 
 - 
 
 <br />
