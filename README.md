@@ -106,8 +106,8 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - Click the first button at the top (blue shark fin) to start capturing activity on the VM.
   - You can see there is activity constantly going in the background of the VM, despite you not doing anything.
 <p align="center">
-<img src="https://i.imgur.com/vVm7yX4.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/ypuqGby.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/vVm7yX4.jpg" height="30%" width="30%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ypuqGby.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/vo6Iafl.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
@@ -125,8 +125,8 @@ _Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol IC
   - On Wireshark, you should be able to see the results of packets being perpetually sent and received.
 <p align="center">
 <img src="https://i.imgur.com/a4jfqVg.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/QlLMACP.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/XnGJJ8b.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/QlLMACP.jpg" height="30%" width="30%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/XnGJJ8b.jpg" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
 
 _While that is infinitely pinging, we'll try to deny those packets and observe what happens next:_
@@ -147,12 +147,12 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 - Click "Add".
 - Wait for a bit to take effect, but return to VM1 and observe the requests time out.
 <p align="center">
-<img src="https://i.imgur.com/NC8PHxH.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/Q9nha7H.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/NC8PHxH.jpg" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Q9nha7H.jpg" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/bCN1O9d.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
-_Now that we've observed the denial of packets, let's try allow it again, however, instead of deleting the added rule, we can simply edit the Action to "Allow". _
+_Now that we've observed the denial of packets, let's try allow it again, however, instead of deleting the added rule, we can simply edit the Action to "Allow"._
 <p align="center">
 <img src="https://i.imgur.com/Mzxx3Pk.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/oIGcjGU.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
