@@ -233,7 +233,7 @@ _Because we are currently using RDP to run the virtual machine, anything and eve
 <img src="https://i.imgur.com/bfOrHLb.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
-<h1>TUTORIAL END.<br /></h1>
+<h1>(ﾉ^ヮ^)ﾉ*:・ﾟ✧ COMPLETE! ✧ﾟ・:*╰(^ヮ^╰)<br /></h1>
 
 <h3>DON'T FORGET TO DELETE **EVERYTHING!** IN AZURE TO SAVE CREDITS!</h3>
 
